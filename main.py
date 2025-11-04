@@ -1,5 +1,6 @@
 # main.py
 import auth
+import messaging
 
 def menu_principal():
     usuario_logado = None
@@ -22,22 +23,17 @@ def menu_principal():
             else:
                 print("Opção inválida.")
         else:
-            # PARABÉNS! Você completou a Task 1.
-            # O código da Task 2 (Enviar Mensagem) e Task 3 (Ler Mensagem)
-            # começará aqui, dentro deste 'else'.
             print(f"\n--- Menu Principal (Logado como: {usuario_logado}) ---")
-            print("1. Escrever nova mensagem (Task 2)")
-            print("2. Ler minhas mensagens (Task 3)")
+            print("1. Escrever nova mensagem ")
+            print("2. Ler minhas mensagens ")
             print("3. Deslogar (Logout)")
             
             escolha_logado = input("Escolha uma opção: ")
 
             if escolha_logado == '1':
-                print("... (Aqui chamará a função de ENVIAR da Task 2) ...")
-                pass
+                messaging.iniciar_envio_mensagem(usuario_logado)
             elif escolha_logado == '2':
-                print("... (Aqui chamará a função de LER da Task 3) ...")
-                pass
+                messaging.iniciar_leitura_mensagens(usuario_logado)
             elif escolha_logado == '3':
                 print(f"Deslogando usuário {usuario_logado}...")
                 usuario_logado = None
